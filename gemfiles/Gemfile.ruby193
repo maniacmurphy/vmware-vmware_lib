@@ -4,6 +4,7 @@ gem 'hashdiff'
 gem 'rbvmomi'
 gem 'net-ssh', '~> 2.9' # net-ssh 3.0 requires ruby 2.x
 gem 'net-scp'
+gem 'facter', '~> 1.7'
 
 group :development, :test do
   gem 'rake'
@@ -12,13 +13,6 @@ group :development, :test do
   gem 'puppet-lint', :require => false
   gem 'rspec-puppet', :require => false
   # gem 'pry', :require => true
-end
-
-facterversion = ENV['GEM_FACTER_VERSION']
-if facterversion
-    gem 'facter', facterversion
-else
-    gem 'facter', :require => false
 end
 
 ENV['GEM_PUPPET_VERSION'] ||= ENV['PUPPET_GEM_VERSION']
